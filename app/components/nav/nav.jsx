@@ -30,13 +30,13 @@ export default function Navbar() {
 
         {/* Social Icons */}
         <div className="flex items-center gap-6">
-          <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">
+          <a href="https://www.linkedin.com/company/try-meetly/people/?viewAsMember=true" className="text-gray-600 hover:text-purple-600 transition-colors">
             <Linkedin size={24} />
           </a>
-          <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">
+          <a href="https://www.instagram.com/try_flaunt?igsh=MXJ3bmV2c3Jhbjlleg==" className="text-gray-600 hover:text-purple-600 transition-colors">
             <Instagram size={24} />
           </a>
-          <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">
+          <a href="https://x.com/Siddhartha13691" className="text-gray-600 hover:text-purple-600 transition-colors">
             <Twitter size={24} />
           </a>
         </div>
