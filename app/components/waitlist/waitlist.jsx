@@ -41,9 +41,9 @@ const WaitlistForm = () => {
         
         // Define the user data to upload
         const userData = {
-            instagramId: instagramId,
-            email: email,
-            phoneNumber: phoneNumber
+      
+            email: email
+         
         };
 
         // Set the user data at the specified reference
@@ -91,20 +91,7 @@ const WaitlistForm = () => {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="username" className="block text-sm  text-gray-700 mb-1 font-semibold">
-              Instagram Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200"
-              placeholder="@seriously.stylish"
-              value={instagramId}
-              onChange={(e) => setInstagramId(e.target.value)}
-              required
-            />
-          </div>
+         
 
           <div>
             <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
@@ -121,19 +108,6 @@ const WaitlistForm = () => {
             />
           </div>
 
-          <div>
-            <label htmlFor="phone" className="text-sm  text-gray-700 mb-1 flex items-center gap-2 font-semibold ">
-              <span>Phone Number (optional)</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200"
-              placeholder="For fashion emergencies only 👔"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-          </div>
 
           <button
             type="submit"

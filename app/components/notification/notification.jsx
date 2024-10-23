@@ -2,38 +2,17 @@
 import { useState, useEffect } from 'react';
 import { X, MapPin } from 'lucide-react';
 
-// Updated names data including Telugu names
-export const indianNames = [
-  "Aanya", "Diya", "Saanvi", "Advika", "Ananya",
-  "Avni", "Ishita", "Kavya", "Lakshmi", "Myra",
-  "Navya", "Pari", "Riya", "Sahana", "Tanvi",
-  "Veda", "Zara", "Aadhya", "Aaradhya", "Prisha",
-  // Telugu names
-  "Annapurna", "Bhavani", "Chandrika", "Divya", "Eeshwari",
-  "Gayatri", "Hema", "Indumathi", "Jyothi", "Kamala",
-  "Lalitha", "Madhavi", "Nandini", "Padma", "Radha",
-  "Saraswati", "Tulasi", "Uma", "Vani", "Yamuna"
+// Curated list of Indian girls' names
+const indianGirlNames = [
+  "Aaradhya", "Ananya", "Aditi", "Anika", "Anvi",
+  "Bhavya", "Divya", "Diya", "Drishti", "Esha",
+  "Ishika", "Ishita", "Kavya", "Keerthi", "Lasya",
+  "Mahika", "Nandini", "Navya", "Nithya", "Pranavi",
+  "Prisha", "Riya", "Saanvi", "Sahithi", "Sanjana",
+  "Shreya", "Tanvi", "Veda", "Vibha", "Yukta"
 ];
 
-// Export notification styles (unchanged)
-export const notificationStyles = `
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-in {
-  animation: slide-in 0.3s ease-out;
-}
-`;
-
-// Export Notification Component (unchanged)
+// Export Notification Component
 export const Notification = ({ name, onClose }) => {
   return (
     <div className="fixed top-4 right-4 w-80 bg-white rounded-lg shadow-lg border border-gray-100 animate-slide-in">
@@ -41,10 +20,9 @@ export const Notification = ({ name, onClose }) => {
         {/* Avatar */}
         <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
           <span className="text-purple-600 font-medium text-base">
-            {name[0]}
+            {name?.[0] || '?'}
           </span>
         </div>
-
         {/* Content */}
         <div className="flex-1 min-w-0">
           <div className="flex justify-between items-start">
@@ -73,13 +51,13 @@ export const Notification = ({ name, onClose }) => {
   );
 };
 
-// Export utility functions
-export const getRandomName = () => {
-  const randomIndex = Math.floor(Math.random() * indianNames.length);
-  return indianNames[randomIndex];
+// Utility function to get random name
+const getRandomName = () => {
+  const randomIndex = Math.floor(Math.random() * indianGirlNames.length);
+  return indianGirlNames[randomIndex];
 };
 
-// Export main notification system
+// Main notification system
 export default function NotificationSystem() {
   const [notifications, setNotifications] = useState([]);
 
@@ -90,9 +68,10 @@ export default function NotificationSystem() {
     };
     setNotifications(prev => [...prev, newNotification]);
     
+    // Remove notification after 30 seconds
     setTimeout(() => {
       removeNotification(newNotification.id);
-    }, 30000); // Changed to 30 seconds
+    }, 30000);
   };
 
   const removeNotification = (id) => {
@@ -100,9 +79,10 @@ export default function NotificationSystem() {
   };
 
   useEffect(() => {
+    // Add new notification every 5-10 seconds
     const interval = setInterval(() => {
       addNotification();
-    },   Math.floor(Math.random() * (10000 - 5000 + 1) + 5000)) // Random interval between 1 and 2 minutes
+    }, Math.floor(Math.random() * (10000 - 5000 + 1) + 5000));
 
     return () => clearInterval(interval);
   }, []);

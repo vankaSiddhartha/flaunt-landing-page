@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Navbar from './nav/nav';
 import HeroVideoDialog from '@/components/ui/hero-video-dialog';
 import { ChevronRight } from "lucide-react";
-
 import { cn } from '@/lib/utils';
 import AnimatedGradientText from '@/components/ui/animated-gradient-text';
 import SparklesText from '@/components/ui/sparkles-text';
@@ -13,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AppleCardsCarouselDemo } from './features/featuresComp';
 import WaitlistForm from './waitlist/waitlist';
 import { WobbleCardDemo } from './cardFeatures/cardFeatures';
+import { Notification } from './notification/notification';
 
 const Home = () => {
   const [startTime] = useState(new Date());
