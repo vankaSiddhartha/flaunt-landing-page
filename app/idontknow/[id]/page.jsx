@@ -2,7 +2,9 @@ import RetroGrid from '@/components/ui/retro-grid';
 import React from 'react';
 import Link from 'next/link';
 
-const Page = () => {
+const Page = ({params}) => {
+     const { id } = params;
+
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-4">
       <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-3xl font-bold leading-none tracking-tighter text-transparent sm:text-4xl">
