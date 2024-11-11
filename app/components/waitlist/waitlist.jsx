@@ -64,12 +64,11 @@ const WaitlistForm = () => {
         <div className="bg-transparent rounded-lg p-6 ">
           <h2 className="text-2xl font-bold text-black mb-2 flex items-center justify-center gap-2">
             <Sparkles className="animate-spin" />
-            Your Clothes Are About To Get Lucky!
+            Thanks a lot for your response
             <Heart className="text-red-500" />
           </h2>
-          <p className="text-green-700 mb-4 font-semibold">Welcome to the most fashionably single community! 🎉</p>
           <p className="text-sm text-green-600 itali font-semiboldc">
-            Warning: Side effects may include excessive style and confidence
+            We'll reach out to you through email within the next few hours.
           </p>
         </div>
       </div>
