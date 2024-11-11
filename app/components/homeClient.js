@@ -20,14 +20,7 @@ const Home = () => {
 
   const handleWaitlistClick = () => {
     setShowForm(true);
-    toast.success('Welcome to the waitlist form!', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    });
+  
   };
 
   return (
